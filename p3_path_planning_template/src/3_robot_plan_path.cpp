@@ -44,6 +44,9 @@ int main(int argc, char const *argv[])
 
     std::vector<Cell> path = breadthFirstSearch(graph, start, goal);
     //std::vector<Cell> path = aStarSearch(graph, start, goal);
+    for (int i = 0; i < path.size(); i++) {
+        std::cout << "Path Coords: " << path[i].i << ", " << path[i].j << std::endl;
+    }
     std::cout << "Found path!\n";
     robot.drivePath(cellsToPoses(path, graph));
 
